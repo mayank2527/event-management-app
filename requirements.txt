@@ -1,0 +1,5 @@
+fastapi==0.68.0
+fastapi_utils==0.2.1
+pydantic==1.8.2
+starlette==0.14.2
+uvicorn==0.14.0
