@@ -51,9 +51,13 @@ class Event(BaseModel):
     window_open_time = Column(DateTime)
     window_close_time = Column(DateTime)
     is_closed = Column(Boolean, nullable=False)
+    bookings = relationship("Booking", cascade="all,delete", backref="ticket")
 
-    def is_window_open(self) -> bool:
-        pass
+    def get_available_tickets(self) -> int:
+        booked_tickets = 0
+        for booking in self.bookings:
+            booked_tickets += booking.no_of_tickets
+        return self.max_available_tickets - booked_tickets
 
 
 class Booking(BaseModel):

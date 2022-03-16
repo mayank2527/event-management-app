@@ -2,8 +2,10 @@ alembic==1.6.5
 asgiref==3.4.0
 fastapi==0.68.0
 fastapi_utils==0.2.1
+passlib[bcrypt]==1.7.4
 psycopg2==2.9.1
 pydantic==1.8.2
+pyjwt==2.3.0
 python-dotenv==0.18.0
 starlette==0.14.2
 SQLAlchemy==1.4.23

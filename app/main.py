@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.routing import APIRoute
 
+from app.routes import router
 
 def version():
     return JSONResponse({"version": "v1"})
@@ -17,3 +18,5 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url=None,
 )
+
+app.include_router(router, prefix="/api")
